@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7239DA3D15D706540032C17B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA3C15D706540032C17B /* UIKit.framework */; };
+		7239DA3F15D706540032C17B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA3E15D706540032C17B /* Foundation.framework */; };
+		7239DA4115D706540032C17B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA4015D706540032C17B /* CoreGraphics.framework */; };
+		7239DA4715D706540032C17B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7239DA4515D706540032C17B /* InfoPlist.strings */; };
+		7239DA4915D706540032C17B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7239DA4815D706540032C17B /* main.m */; };
+		7239DA4D15D706540032C17B /* IGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7239DA4C15D706540032C17B /* IGAppDelegate.m */; };
+		7239DA5015D706540032C17B /* IGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7239DA4F15D706540032C17B /* IGViewController.m */; };
+		7239DA5315D706540032C17B /* IGViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7239DA5115D706540032C17B /* IGViewController_iPhone.xib */; };
+		7239DA5615D706540032C17B /* IGViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7239DA5415D706540032C17B /* IGViewController_iPad.xib */; };
+		7239DA5F15D7073B0032C17B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7239DA5E15D7073B0032C17B /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7239DA6115D70A4F0032C17B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA6015D70A4F0032C17B /* CFNetwork.framework */; };
+		7239DA6415D70AA50032C17B /* IGThermalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7239DA6315D70AA50032C17B /* IGThermalSupport.m */; };
+		7239DA6615D70DD00032C17B /* ticket_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7239DA6515D70DD00032C17B /* ticket_logo.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7239DA3815D706540032C17B /* ThermalSupportDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThermalSupportDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7239DA3C15D706540032C17B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7239DA3E15D706540032C17B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7239DA4015D706540032C17B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7239DA4415D706540032C17B /* ThermalSupportDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThermalSupportDemo-Info.plist"; sourceTree = "<group>"; };
+		7239DA4615D706540032C17B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7239DA4815D706540032C17B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7239DA4A15D706540032C17B /* ThermalSupportDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThermalSupportDemo-Prefix.pch"; sourceTree = "<group>"; };
+		7239DA4B15D706540032C17B /* IGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGAppDelegate.h; sourceTree = "<group>"; };
+		7239DA4C15D706540032C17B /* IGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGAppDelegate.m; sourceTree = "<group>"; };
+		7239DA4E15D706540032C17B /* IGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGViewController.h; sourceTree = "<group>"; };
+		7239DA4F15D706540032C17B /* IGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGViewController.m; sourceTree = "<group>"; };
+		7239DA5215D706540032C17B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGViewController_iPhone.xib; sourceTree = "<group>"; };
+		7239DA5515D706540032C17B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGViewController_iPad.xib; sourceTree = "<group>"; };
+		7239DA5D15D7073B0032C17B /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		7239DA5E15D7073B0032C17B /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		7239DA6015D70A4F0032C17B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7239DA6215D70AA50032C17B /* IGThermalSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGThermalSupport.h; path = ../IGThermalSupport.h; sourceTree = "<group>"; };
+		7239DA6315D70AA50032C17B /* IGThermalSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGThermalSupport.m; path = ../IGThermalSupport.m; sourceTree = "<group>"; };
+		7239DA6515D70DD00032C17B /* ticket_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_logo.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7239DA3515D706540032C17B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7239DA6115D70A4F0032C17B /* CFNetwork.framework in Frameworks */,
+				7239DA3D15D706540032C17B /* UIKit.framework in Frameworks */,
+				7239DA3F15D706540032C17B /* Foundation.framework in Frameworks */,
+				7239DA4115D706540032C17B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7239DA2D15D706540032C17B = {
+			isa = PBXGroup;
+			children = (
+				7239DA6215D70AA50032C17B /* IGThermalSupport.h */,
+				7239DA6315D70AA50032C17B /* IGThermalSupport.m */,
+				7239DA4215D706540032C17B /* ThermalSupport */,
+				7239DA3B15D706540032C17B /* Frameworks */,
+				7239DA3915D706540032C17B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7239DA3915D706540032C17B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7239DA3815D706540032C17B /* ThermalSupportDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7239DA3B15D706540032C17B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7239DA6015D70A4F0032C17B /* CFNetwork.framework */,
+				7239DA3C15D706540032C17B /* UIKit.framework */,
+				7239DA3E15D706540032C17B /* Foundation.framework */,
+				7239DA4015D706540032C17B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7239DA4215D706540032C17B /* ThermalSupport */ = {
+			isa = PBXGroup;
+			children = (
+				7239DA6515D70DD00032C17B /* ticket_logo.png */,
+				7239DA5C15D7073B0032C17B /* Classes */,
+				7239DA4B15D706540032C17B /* IGAppDelegate.h */,
+				7239DA4C15D706540032C17B /* IGAppDelegate.m */,
+				7239DA4E15D706540032C17B /* IGViewController.h */,
+				7239DA4F15D706540032C17B /* IGViewController.m */,
+				7239DA5115D706540032C17B /* IGViewController_iPhone.xib */,
+				7239DA5415D706540032C17B /* IGViewController_iPad.xib */,
+				7239DA4315D706540032C17B /* Supporting Files */,
+			);
+			path = ThermalSupport;
+			sourceTree = "<group>";
+		};
+		7239DA4315D706540032C17B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7239DA4415D706540032C17B /* ThermalSupportDemo-Info.plist */,
+				7239DA4515D706540032C17B /* InfoPlist.strings */,
+				7239DA4815D706540032C17B /* main.m */,
+				7239DA4A15D706540032C17B /* ThermalSupportDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7239DA5C15D7073B0032C17B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7239DA5D15D7073B0032C17B /* GCDAsyncSocket.h */,
+				7239DA5E15D7073B0032C17B /* GCDAsyncSocket.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7239DA3715D706540032C17B /* ThermalSupportDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7239DA5915D706540032C17B /* Build configuration list for PBXNativeTarget "ThermalSupportDemo" */;
+			buildPhases = (
+				7239DA3415D706540032C17B /* Sources */,
+				7239DA3515D706540032C17B /* Frameworks */,
+				7239DA3615D706540032C17B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThermalSupportDemo;
+			productName = ThermalSupport;
+			productReference = 7239DA3815D706540032C17B /* ThermalSupportDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7239DA2F15D706540032C17B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IG;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 7239DA3215D706540032C17B /* Build configuration list for PBXProject "ThermalSupportDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7239DA2D15D706540032C17B;
+			productRefGroup = 7239DA3915D706540032C17B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7239DA3715D706540032C17B /* ThermalSupportDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7239DA3615D706540032C17B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7239DA4715D706540032C17B /* InfoPlist.strings in Resources */,
+				7239DA5315D706540032C17B /* IGViewController_iPhone.xib in Resources */,
+				7239DA5615D706540032C17B /* IGViewController_iPad.xib in Resources */,
+				7239DA6615D70DD00032C17B /* ticket_logo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7239DA3415D706540032C17B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7239DA4915D706540032C17B /* main.m in Sources */,
+				7239DA4D15D706540032C17B /* IGAppDelegate.m in Sources */,
+				7239DA5015D706540032C17B /* IGViewController.m in Sources */,
+				7239DA5F15D7073B0032C17B /* GCDAsyncSocket.m in Sources */,
+				7239DA6415D70AA50032C17B /* IGThermalSupport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7239DA4515D706540032C17B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7239DA4615D706540032C17B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7239DA5115D706540032C17B /* IGViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7239DA5215D706540032C17B /* en */,
+			);
+			name = IGViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		7239DA5415D706540032C17B /* IGViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7239DA5515D706540032C17B /* en */,
+			);
+			name = IGViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7239DA5715D706540032C17B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7239DA5815D706540032C17B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7239DA5A15D706540032C17B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThermalSupport/ThermalSupportDemo-Prefix.pch";
+				INFOPLIST_FILE = "ThermalSupport/ThermalSupportDemo-Info.plist";
+				PRODUCT_NAME = ThermalSupportDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7239DA5B15D706540032C17B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThermalSupport/ThermalSupportDemo-Prefix.pch";
+				INFOPLIST_FILE = "ThermalSupport/ThermalSupportDemo-Info.plist";
+				PRODUCT_NAME = ThermalSupportDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7239DA3215D706540032C17B /* Build configuration list for PBXProject "ThermalSupportDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7239DA5715D706540032C17B /* Debug */,
+				7239DA5815D706540032C17B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7239DA5915D706540032C17B /* Build configuration list for PBXNativeTarget "ThermalSupportDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7239DA5A15D706540032C17B /* Debug */,
+				7239DA5B15D706540032C17B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7239DA2F15D706540032C17B /* Project object */;
+}
