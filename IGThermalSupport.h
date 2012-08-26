@@ -1,10 +1,13 @@
-//
+//  
 //  IGThermalSupport.h
-//  ThermalSupportDemo
+//  
+//  This class is released in the MIT license.
+//  Created by Chris Chan in 12 Aug 2012.
+//  Copyright (c) 2012 IGPSD Ltd.
+//  
+//  https://github.com/moming2k/ThermalPrinterKit.git
 //
-//  Created by Chris Chan on 12/8/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+//  Version 1.0.3
 
 #import <Foundation/Foundation.h>
 
