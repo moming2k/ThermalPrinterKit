@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72176BA215FF472F00C863C2 /* IGThermalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A6188C15F9CEF000353AE7 /* IGThermalSupport.m */; };
 		7239DA3D15D706540032C17B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA3C15D706540032C17B /* UIKit.framework */; };
 		7239DA3F15D706540032C17B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA3E15D706540032C17B /* Foundation.framework */; };
 		7239DA4115D706540032C17B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA4015D706540032C17B /* CoreGraphics.framework */; };
@@ -18,7 +19,6 @@
 		7239DA5615D706540032C17B /* IGViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7239DA5415D706540032C17B /* IGViewController_iPad.xib */; };
 		7239DA5F15D7073B0032C17B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7239DA5E15D7073B0032C17B /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7239DA6115D70A4F0032C17B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA6015D70A4F0032C17B /* CFNetwork.framework */; };
-		7239DA6415D70AA50032C17B /* IGThermalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7239DA6315D70AA50032C17B /* IGThermalSupport.m */; };
 		7239DA6615D70DD00032C17B /* ticket_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7239DA6515D70DD00032C17B /* ticket_logo.png */; };
 /* End PBXBuildFile section */
 
@@ -40,9 +40,9 @@
 		7239DA5D15D7073B0032C17B /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		7239DA5E15D7073B0032C17B /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		7239DA6015D70A4F0032C17B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		7239DA6215D70AA50032C17B /* IGThermalSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGThermalSupport.h; path = ../IGThermalSupport.h; sourceTree = "<group>"; };
-		7239DA6315D70AA50032C17B /* IGThermalSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGThermalSupport.m; path = ../IGThermalSupport.m; sourceTree = "<group>"; };
 		7239DA6515D70DD00032C17B /* ticket_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_logo.png; sourceTree = "<group>"; };
+		72A6188B15F9CEF000353AE7 /* IGThermalSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGThermalSupport.h; sourceTree = "<group>"; };
+		72A6188C15F9CEF000353AE7 /* IGThermalSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGThermalSupport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,6 @@
 		7239DA2D15D706540032C17B = {
 			isa = PBXGroup;
 			children = (
-				7239DA6215D70AA50032C17B /* IGThermalSupport.h */,
-				7239DA6315D70AA50032C17B /* IGThermalSupport.m */,
 				7239DA4215D706540032C17B /* ThermalSupport */,
 				7239DA3B15D706540032C17B /* Frameworks */,
 				7239DA3915D706540032C17B /* Products */,
@@ -93,6 +91,8 @@
 		7239DA4215D706540032C17B /* ThermalSupport */ = {
 			isa = PBXGroup;
 			children = (
+				72A6188B15F9CEF000353AE7 /* IGThermalSupport.h */,
+				72A6188C15F9CEF000353AE7 /* IGThermalSupport.m */,
 				7239DA6515D70DD00032C17B /* ticket_logo.png */,
 				7239DA5C15D7073B0032C17B /* Classes */,
 				7239DA4B15D706540032C17B /* IGAppDelegate.h */,
@@ -195,7 +195,7 @@
 				7239DA4D15D706540032C17B /* IGAppDelegate.m in Sources */,
 				7239DA5015D706540032C17B /* IGViewController.m in Sources */,
 				7239DA5F15D7073B0032C17B /* GCDAsyncSocket.m in Sources */,
-				7239DA6415D70AA50032C17B /* IGThermalSupport.m in Sources */,
+				72176BA215FF472F00C863C2 /* IGThermalSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +317,7 @@
 				7239DA5B15D706540032C17B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
