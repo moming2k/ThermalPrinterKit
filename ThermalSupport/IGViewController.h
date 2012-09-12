@@ -15,4 +15,6 @@
     GCDAsyncSocket *asyncSocket;
 }
 
+- (void)testPrintNumber;
+
 @end

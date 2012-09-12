@@ -191,5 +191,11 @@
     
 }
 
++ (UIImage *) receiptImage:(UIImage*)image withNumber:(int)number
+{
+    UIImage *result = image;
+    return result;
+}
+
 
 @end

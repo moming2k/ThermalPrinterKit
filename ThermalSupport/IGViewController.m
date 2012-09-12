@@ -14,6 +14,8 @@
 {
     [super viewDidLoad];
     [self connectPrinter];
+    
+    [self testPrintNumber];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -29,6 +31,11 @@
         //self.viewController.label.text = @"Oops";
         NSLog(@"error connect to 192.168.0.200");
     }
+}
+
+- (void)testPrintNumber
+{
+    
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
