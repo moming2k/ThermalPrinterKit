@@ -13,6 +13,7 @@
 @interface IGViewController : UIViewController
 {
     GCDAsyncSocket *asyncSocket;
+    IBOutlet UIImageView *receiptImage;
 }
 
 - (void)testPrintNumber;

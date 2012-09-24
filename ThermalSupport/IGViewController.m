@@ -35,15 +35,116 @@
 
 - (void)testPrintNumber
 {
+    UIImage *bigImage = [UIImage imageNamed:@"ticket_logo_red"];
     
+    UIImage *bigImage_0 = [UIImage imageNamed:@"ticket_0"];
+    
+//    receiptImage.image = [self mergeImage:bigImage withNumber:213];
+    receiptImage.image = [IGThermalSupport mergeImage:bigImage withNumber:107];
+//    
+//    CGRect myImageRect = CGRectMake(0.0, 0.0, bigImage.size.width, bigImage.size.height);
+//    
+//    CGRect myImageRect_0 = CGRectMake(0.0, 0.0, bigImage_0.size.width, bigImage_0.size.height);
+//    
+//    
+//    CGImageRef imageRef = bigImage.CGImage;
+//    CGImageRef imageRef_0 = bigImage_0.CGImage;
+//    
+//    CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, myImageRect);
+//    
+//    CGImageRef subImageRef_0 = CGImageCreateWithImageInRect(imageRef_0, myImageRect_0);
+//    
+//    
+//    CGSize size;
+//    
+//    size.width = bigImage.size.width;
+//    
+//    size.height = bigImage.size.height;
+//    
+//    UIGraphicsBeginImageContext(size);
+//    
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    
+////    CGContextDrawImage(context, myImageRect, subImageRef);
+//    
+//    CGContextDrawImage(context, myImageRect_0, subImageRef_0);
+//    
+//    
+//    
+//    
+//    
+//    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+//    
+//    UIGraphicsEndImageContext();
+//    
+//    
+
+    
+    
+    
+    
+    
+    
+    
+    //receiptImage.image = smallImage ; //[IGThermalSupport receiptImage:logo withNumber:100];
 }
+
+- (UIImage*)mergeImage:(UIImage*)first withNumber:(int)number
+{
+    
+    // get size of the first image
+    CGImageRef firstImageRef = first.CGImage;
+    CGFloat firstWidth = CGImageGetWidth(firstImageRef);
+    CGFloat firstHeight = CGImageGetHeight(firstImageRef);
+    
+    // get size of the second image
+    
+    UIImage *first_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",number/100]];
+    UIImage *secord_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",1]];
+    UIImage *third_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",3]];
+    
+    
+    
+    CGImageRef secondImageRef = first_number.CGImage ;
+    CGFloat secondWidth = CGImageGetWidth(secondImageRef);
+    CGFloat secondHeight = CGImageGetHeight(secondImageRef);
+    
+    // build merged size
+    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
+    
+    // capture image context ref
+    UIGraphicsBeginImageContext(mergedSize);
+    
+    //Draw images onto the context
+    [first drawInRect:CGRectMake(0, 0, firstWidth, firstHeight)];
+    [first_number drawInRect:CGRectMake(100, 200, secondWidth, secondHeight)];
+    [secord_number drawInRect:CGRectMake(200, 200, secondWidth, secondHeight)];
+    [third_number drawInRect:CGRectMake(300, 200, secondWidth, secondHeight)];
+    
+    
+    // assign context to new UIImage
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // end context
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
-    UIImage *logo = [UIImage imageNamed:@"ticket_logo"];
-    //[self printImage:logo withSocket:sock];
-    NSData *print_data = [IGThermalSupport imageToThermalData:logo];
+    
+    UIImage *bigImage = [UIImage imageNamed:@"ticket_logo_red"];
+    
+//    UIImage *logo = [UIImage imageNamed:@"ticket_logo"];
+//    //[self printImage:logo withSocket:sock];
+//    NSData *print_data = [IGThermalSupport imageToThermalData:logo];
+//    [sock writeData:print_data withTimeout:-1 tag:0];
+    
+    NSData *print_data = [IGThermalSupport imageToThermalData:[IGThermalSupport mergeImage:bigImage withNumber:102]];
     [sock writeData:print_data withTimeout:-1 tag:0];
+    
     
     print_data = [IGThermalSupport feedLines:5];
     [sock writeData:print_data withTimeout:-1 tag:0];
