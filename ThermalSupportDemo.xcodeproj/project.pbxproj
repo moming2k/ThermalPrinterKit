@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72176BA215FF472F00C863C2 /* IGThermalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A6188C15F9CEF000353AE7 /* IGThermalSupport.m */; };
 		7239DA3D15D706540032C17B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA3C15D706540032C17B /* UIKit.framework */; };
 		7239DA3F15D706540032C17B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA3E15D706540032C17B /* Foundation.framework */; };
 		7239DA4115D706540032C17B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239DA4015D706540032C17B /* CoreGraphics.framework */; };
@@ -55,6 +54,8 @@
 		7239DA5E15D7073B0032C17B /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		7239DA6015D70A4F0032C17B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7239DA6515D70DD00032C17B /* ticket_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_logo.png; sourceTree = "<group>"; };
+		7273EA5B1612C60F0075A875 /* IGThermalSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGThermalSupport.h; sourceTree = "<group>"; };
+		7273EA5C1612C60F0075A875 /* IGThermalSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGThermalSupport.m; sourceTree = "<group>"; };
 		72A3019A1609BED500484635 /* ticket_logo_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_logo_red.png; sourceTree = "<group>"; };
 		72A3019D1609C05700484635 /* ticket_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_0.png; sourceTree = "<group>"; };
 		72A3019E1609C05700484635 /* ticket_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_1.png; sourceTree = "<group>"; };
@@ -69,8 +70,6 @@
 		72A301B11609DCD700484635 /* ticket_logo_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_logo_blue.png; sourceTree = "<group>"; };
 		72A301B21609DCD700484635 /* ticket_logo_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_logo_green.png; sourceTree = "<group>"; };
 		72A301B31609DCD700484635 /* ticket_logo_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket_logo_yellow.png; sourceTree = "<group>"; };
-		72A6188B15F9CEF000353AE7 /* IGThermalSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGThermalSupport.h; sourceTree = "<group>"; };
-		72A6188C15F9CEF000353AE7 /* IGThermalSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGThermalSupport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +118,8 @@
 		7239DA4215D706540032C17B /* ThermalSupport */ = {
 			isa = PBXGroup;
 			children = (
-				72A6188B15F9CEF000353AE7 /* IGThermalSupport.h */,
-				72A6188C15F9CEF000353AE7 /* IGThermalSupport.m */,
+				7273EA5B1612C60F0075A875 /* IGThermalSupport.h */,
+				7273EA5C1612C60F0075A875 /* IGThermalSupport.m */,
 				7239DA6515D70DD00032C17B /* ticket_logo.png */,
 				72A3019A1609BED500484635 /* ticket_logo_red.png */,
 				72A3019D1609C05700484635 /* ticket_0.png */,
@@ -251,7 +250,6 @@
 				7239DA4D15D706540032C17B /* IGAppDelegate.m in Sources */,
 				7239DA5015D706540032C17B /* IGViewController.m in Sources */,
 				7239DA5F15D7073B0032C17B /* GCDAsyncSocket.m in Sources */,
-				72176BA215FF472F00C863C2 /* IGThermalSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

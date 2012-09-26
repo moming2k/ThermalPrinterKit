@@ -164,6 +164,50 @@
 	return context;	
 }
 
++ (UIImage*)mergeImage:(UIImage*)first withNumber:(int)number
+{
+    // get size of the first image
+    
+    CGImageRef firstImageRef = first.CGImage;
+    CGFloat firstWidth = CGImageGetWidth(firstImageRef);
+    CGFloat firstHeight = CGImageGetHeight(firstImageRef);
+    
+    // get size of the second image
+    
+    int first_num = number/100;
+    int secord_num = (number - first_num*100)/10;
+    int third_num = number - first_num*100 - secord_num*10;
+    
+    UIImage *first_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",first_num]];
+    UIImage *secord_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",secord_num]];
+    UIImage *third_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",third_num]];
+    
+    CGImageRef secondImageRef = first_number.CGImage ;
+    CGFloat secondWidth = CGImageGetWidth(secondImageRef);
+    CGFloat secondHeight = CGImageGetHeight(secondImageRef);
+    
+    // build merged size
+    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
+    
+    // capture image context ref
+    UIGraphicsBeginImageContext(mergedSize);
+    
+    //Draw images onto the context
+    [first drawInRect:CGRectMake(0, 0, firstWidth, firstHeight)];
+    [first_number drawInRect:CGRectMake(270, 230, secondWidth, secondHeight)];
+    [secord_number drawInRect:CGRectMake(340, 230, secondWidth, secondHeight)];
+    [third_number drawInRect:CGRectMake(410, 230, secondWidth, secondHeight)];
+    
+    
+    // assign context to new UIImage
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // end context
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 + (NSData *)cutLine
 {
     int index = 0;
@@ -176,6 +220,41 @@
     [data appendBytes:m_imageData length:4];
     return data;
     
+}
+
++ (NSData *)feedLines:(int)lines
+{
+    int index = 0;
+    NSMutableData *data = [[NSMutableData alloc] initWithCapacity:0];
+    uint8_t *m_imageData = (uint8_t *) malloc(3);
+    m_imageData[index++] = 27;
+    m_imageData[index++] = 100;
+    m_imageData[index++] = lines;
+    [data appendBytes:m_imageData length:3];
+    return data;
+    
+}
+
++ (UIImage *) receiptImage:(UIImage*)image withNumber:(int)number
+{
+    UIImage *result = image;
+    return result;
+    
+//    UIImage *bottomImage = [UIImage imageNamed:@"bottom.png"]; //background image
+//    UIImage *image       = [UIImage imageNamed:@"top.png"]; //foreground image
+//    
+//    CGSize newSize = CGSizeMake(width, height);
+//    UIGraphicsBeginImageContext( newSize );
+//    
+//    // Use existing opacity as is
+//    [bottomImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+//    
+//    // Apply supplied opacity if applicable
+//    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height) blendMode:kCGBlendModeNormal alpha:0.8];
+//    
+//    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+//    
+//    UIGraphicsEndImageContext();
 }
 
 
