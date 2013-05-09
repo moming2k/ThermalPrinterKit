@@ -10,6 +10,8 @@
 //  Version 1.0.3
 
 #import "IGThermalSupport.h"
+#import "FileManager.h"
+#import "Barcode.h"
 
 @implementation IGThermalSupport
 
@@ -164,11 +166,20 @@
 	return context;	
 }
 
-+ (UIImage*)mergeImage:(UIImage*)first withNumber:(int)number
++ (UIImage*)mergeImage:(UIImage*)first qrcode:(UIImage*)qrcode withNumber:(int)number
 {
+    // gen qr code
+    NSString *code = @"http://www.igpsd.com";
+    
+    Barcode *barcode = [[Barcode alloc] init];
+    
+    [barcode setupQRCode:code];
+    UIImage *bigImage_qrcode = barcode.qRBarcode;
+    
     // get size of the first image
     
     CGImageRef firstImageRef = first.CGImage;
+    CGImageRef qrcodeImageRef = qrcode.CGImage;
     CGFloat firstWidth = CGImageGetWidth(firstImageRef);
     CGFloat firstHeight = CGImageGetHeight(firstImageRef);
     
@@ -187,7 +198,8 @@
     CGFloat secondHeight = CGImageGetHeight(secondImageRef);
     
     // build merged size
-    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
+    CGSize mergedSize = CGSizeMake(600, 600);
+//    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
     
     // capture image context ref
     UIGraphicsBeginImageContext(mergedSize);
@@ -197,6 +209,7 @@
     [first_number drawInRect:CGRectMake(270, 230, secondWidth, secondHeight)];
     [secord_number drawInRect:CGRectMake(340, 230, secondWidth, secondHeight)];
     [third_number drawInRect:CGRectMake(410, 230, secondWidth, secondHeight)];
+    [qrcode drawInRect:CGRectMake(0, 350, 200, 200)];
     
     
     // assign context to new UIImage

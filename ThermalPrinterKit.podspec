@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
   s.author       = { "Chris Chan" => "chrischan@igpsd.com" }
   s.source       = { :git => "https://github.com/moming2k/ThermalPrinterKit.git", :tag => "1.0.3" }
   s.platform     = :ios, '4.3'
-  s.source_files = 'ThermalSupport/*.*'
+  s.source_files = '*.*'
 end
