@@ -7,6 +7,8 @@
 //
 
 #import "IGViewController.h"
+#import "FileManager.h"
+#import "Barcode.h"
 
 @implementation IGViewController
 
@@ -39,8 +41,15 @@
     
     UIImage *bigImage_0 = [UIImage imageNamed:@"ticket_0"];
     
+    NSString *code = @"http://igpsd.com";
+    
+    Barcode *barcode = [[Barcode alloc] init];
+    
+    [barcode setupQRCode:code];
+    UIImage *bigImage_qrcode = barcode.qRBarcode;
+    
 //    receiptImage.image = [self mergeImage:bigImage withNumber:213];
-    receiptImage.image = [IGThermalSupport mergeImage:bigImage withNumber:107];
+    receiptImage.image = [IGThermalSupport mergeImage:bigImage qrcode:bigImage_qrcode withNumber:107];
 //    
 //    CGRect myImageRect = CGRectMake(0.0, 0.0, bigImage.size.width, bigImage.size.height);
 //    
@@ -77,15 +86,7 @@
 //    
 //    UIGraphicsEndImageContext();
 //    
-//    
-
-    
-    
-    
-    
-    
-    
-    
+//
     //receiptImage.image = smallImage ; //[IGThermalSupport receiptImage:logo withNumber:100];
 }
 
@@ -135,24 +136,24 @@
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
     
-    UIImage *bigImage = [UIImage imageNamed:@"ticket_logo_red"];
+//    UIImage *bigImage = [UIImage imageNamed:@"ticket_logo_red"];
     
 //    UIImage *logo = [UIImage imageNamed:@"ticket_logo"];
 //    //[self printImage:logo withSocket:sock];
 //    NSData *print_data = [IGThermalSupport imageToThermalData:logo];
 //    [sock writeData:print_data withTimeout:-1 tag:0];
     
-    NSData *print_data = [IGThermalSupport imageToThermalData:[IGThermalSupport mergeImage:bigImage withNumber:102]];
-    [sock writeData:print_data withTimeout:-1 tag:0];
-    
-    
-    print_data = [IGThermalSupport feedLines:5];
-    [sock writeData:print_data withTimeout:-1 tag:0];
-    
-    print_data = [IGThermalSupport cutLine];
-    [sock writeData:print_data withTimeout:-1 tag:0];
-    
-    [sock disconnectAfterWriting];
+//    NSData *print_data = [IGThermalSupport imageToThermalData:[IGThermalSupport mergeImage:bigImage qrcode:NULL withNumber:102]];
+//    [sock writeData:print_data withTimeout:-1 tag:0];
+//    
+//    
+//    print_data = [IGThermalSupport feedLines:5];
+//    [sock writeData:print_data withTimeout:-1 tag:0];
+//    
+//    print_data = [IGThermalSupport cutLine];
+//    [sock writeData:print_data withTimeout:-1 tag:0];
+//    
+//    [sock disconnectAfterWriting];
 }
 
 
