@@ -37,56 +37,63 @@
 
 - (void)testPrintNumber
 {
+    UIImage *bigImage = [UIImage imageNamed:@"top"];
+    UIImage *shopLogo = [UIImage imageNamed:@"shop-logo"];
+    UIImage *imageInfo = [UIImage imageNamed:@"info"];
+    
+    NSString *code = @"http://igpsd.com";
+    NSString *colorType = @"b";
+
+    receiptImage.image = [IGThermalSupport mergeImage:bigImage withShopLogo:shopLogo withImageInfo:imageInfo withQRCode:code withColorType:colorType withNumber:898];
+}
+
+- (void)testPrintNumber2
+{
     UIImage *bigImage = [UIImage imageNamed:@"ticket_logo_red"];
     
     UIImage *bigImage_0 = [UIImage imageNamed:@"ticket_0"];
     
     NSString *code = @"http://igpsd.com";
     
-    Barcode *barcode = [[Barcode alloc] init];
-    
-    [barcode setupQRCode:code];
-    UIImage *bigImage_qrcode = barcode.qRBarcode;
-    
-//    receiptImage.image = [self mergeImage:bigImage withNumber:213];
-    receiptImage.image = [IGThermalSupport mergeImage:bigImage qrcode:bigImage_qrcode withNumber:107];
-//    
-//    CGRect myImageRect = CGRectMake(0.0, 0.0, bigImage.size.width, bigImage.size.height);
-//    
-//    CGRect myImageRect_0 = CGRectMake(0.0, 0.0, bigImage_0.size.width, bigImage_0.size.height);
-//    
-//    
-//    CGImageRef imageRef = bigImage.CGImage;
-//    CGImageRef imageRef_0 = bigImage_0.CGImage;
-//    
-//    CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, myImageRect);
-//    
-//    CGImageRef subImageRef_0 = CGImageCreateWithImageInRect(imageRef_0, myImageRect_0);
-//    
-//    
-//    CGSize size;
-//    
-//    size.width = bigImage.size.width;
-//    
-//    size.height = bigImage.size.height;
-//    
-//    UIGraphicsBeginImageContext(size);
-//    
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    
-////    CGContextDrawImage(context, myImageRect, subImageRef);
-//    
-//    CGContextDrawImage(context, myImageRect_0, subImageRef_0);
-//    
-//    
-//    
-//    
-//    
-//    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
-//    
-//    UIGraphicsEndImageContext();
-//    
-//
+    //    receiptImage.image = [self mergeImage:bigImage withNumber:213];
+    receiptImage.image = [IGThermalSupport mergeImage2:bigImage withQRCode:code withNumber:808];
+    //
+    //    CGRect myImageRect = CGRectMake(0.0, 0.0, bigImage.size.width, bigImage.size.height);
+    //
+    //    CGRect myImageRect_0 = CGRectMake(0.0, 0.0, bigImage_0.size.width, bigImage_0.size.height);
+    //
+    //
+    //    CGImageRef imageRef = bigImage.CGImage;
+    //    CGImageRef imageRef_0 = bigImage_0.CGImage;
+    //
+    //    CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, myImageRect);
+    //
+    //    CGImageRef subImageRef_0 = CGImageCreateWithImageInRect(imageRef_0, myImageRect_0);
+    //
+    //
+    //    CGSize size;
+    //
+    //    size.width = bigImage.size.width;
+    //
+    //    size.height = bigImage.size.height;
+    //
+    //    UIGraphicsBeginImageContext(size);
+    //
+    //    CGContextRef context = UIGraphicsGetCurrentContext();
+    //
+    ////    CGContextDrawImage(context, myImageRect, subImageRef);
+    //
+    //    CGContextDrawImage(context, myImageRect_0, subImageRef_0);
+    //
+    //
+    //
+    //
+    //
+    //    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+    //
+    //    UIGraphicsEndImageContext();
+    //    
+    //
     //receiptImage.image = smallImage ; //[IGThermalSupport receiptImage:logo withNumber:100];
 }
 

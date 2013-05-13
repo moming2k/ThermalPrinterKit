@@ -17,5 +17,6 @@
 }
 
 - (void)testPrintNumber;
+- (void)testPrintNumber2;
 
 @end

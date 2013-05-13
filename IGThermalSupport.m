@@ -166,20 +166,92 @@
 	return context;	
 }
 
-+ (UIImage*)mergeImage:(UIImage*)first qrcode:(UIImage*)qrcode withNumber:(int)number
++ (UIImage*)mergeImage:(UIImage*)first withShopLogo:(UIImage*)shopLogo withImageInfo:(UIImage*)imageInfo withQRCode:(NSString*)qrcode withColorType:(NSString*)colorType withNumber:(int)number
 {
+    // get size of the first image
+    CGImageRef firstImageRef = first.CGImage;
+    CGFloat firstWidth = CGImageGetWidth(firstImageRef);
+    CGFloat firstHeight = CGImageGetHeight(firstImageRef);
+
+    // get size of the logo image
+    CGImageRef shopLogoImageRef = shopLogo.CGImage;
+    CGFloat shopLogoWidth = CGImageGetWidth(shopLogoImageRef);
+    CGFloat shopLogoHeight = CGImageGetHeight(shopLogoImageRef);
+    
+    // get size of the number image
+    int first_num = number/100;
+    int secord_num = (number - first_num*100)/10;
+    int third_num = number - first_num*100 - secord_num*10;
+    
+    UIImage *ticket_type = [UIImage imageNamed:[NSString stringWithFormat:@"char-%@",colorType]];
+    UIImage *first_number = [UIImage imageNamed:[NSString stringWithFormat:@"char-%i",first_num]];
+    UIImage *secord_number = [UIImage imageNamed:[NSString stringWithFormat:@"char-%i",secord_num]];
+    UIImage *third_number = [UIImage imageNamed:[NSString stringWithFormat:@"char-%i",third_num]];
+    
+    CGImageRef secondImageRef = first_number.CGImage;
+    CGFloat secondWidth = CGImageGetWidth(secondImageRef);
+    CGFloat secondHeight = CGImageGetHeight(secondImageRef);
+    
+    // get size of the info image
+    CGImageRef infoImageRef = imageInfo.CGImage;
+    CGFloat infoWidth = CGImageGetWidth(infoImageRef);
+    CGFloat infoHeight = CGImageGetHeight(infoImageRef);
+    CGFloat info_y = firstHeight + shopLogoHeight + 100;
+    
     // gen qr code
-    NSString *code = @"http://www.igpsd.com";
-    
     Barcode *barcode = [[Barcode alloc] init];
+    [barcode setupQRCode:qrcode];
+    UIImage *image_qrcode = barcode.qRBarcode;
+    CGFloat qrcode_y = info_y + infoHeight + 20;
     
-    [barcode setupQRCode:code];
-    UIImage *bigImage_qrcode = barcode.qRBarcode;
+    // build merged size
+    CGSize mergedSize = CGSizeMake(530, qrcode_y + 200);
+//    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
     
+    // capture image context ref
+    UIGraphicsBeginImageContext(mergedSize);
+    
+    //Draw images onto the context
+    [first drawInRect:CGRectMake(0, 0, firstWidth, firstHeight)];
+    [shopLogo drawInRect:CGRectMake(0, firstHeight, shopLogoWidth, shopLogoHeight)];
+    [ticket_type drawInRect:CGRectMake(220, 280, secondWidth, secondHeight)];
+    [first_number drawInRect:CGRectMake(280, 280, secondWidth, secondHeight)];
+    [secord_number drawInRect:CGRectMake(340, 280, secondWidth, secondHeight)];
+    [third_number drawInRect:CGRectMake(400, 280, secondWidth, secondHeight)];
+    [imageInfo drawInRect:CGRectMake(0, info_y, infoWidth, infoHeight)];
+    [image_qrcode drawInRect:CGRectMake(25, qrcode_y, 200, 200)];
+    
+    
+    // assign context to new UIImage
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIImage *newImageWithText = [IGThermalSupport drawText:@"Some text" inImage:newImage atPoint:CGPointMake(0, 280)];
+    // end context
+    UIGraphicsEndImageContext();
+    
+    return newImageWithText;
+}
+
++ (UIImage*)drawText:(NSString*)text inImage:(UIImage*)image atPoint:(CGPoint)point
+{
+    UIFont *font = [UIFont boldSystemFontOfSize:12];
+
+    UIGraphicsBeginImageContext(image.size);
+    [image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
+    CGRect rect = CGRectMake(point.x, point.y, image.size.width, image.size.height);
+    [[UIColor blackColor] set];
+    [text drawInRect:CGRectIntegral(rect) withFont:font];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
++ (UIImage*)mergeImage2:(UIImage*)first withNumber:(int)number
+{
     // get size of the first image
     
     CGImageRef firstImageRef = first.CGImage;
-    CGImageRef qrcodeImageRef = qrcode.CGImage;
     CGFloat firstWidth = CGImageGetWidth(firstImageRef);
     CGFloat firstHeight = CGImageGetHeight(firstImageRef);
     
@@ -198,8 +270,7 @@
     CGFloat secondHeight = CGImageGetHeight(secondImageRef);
     
     // build merged size
-    CGSize mergedSize = CGSizeMake(600, 600);
-//    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
+    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
     
     // capture image context ref
     UIGraphicsBeginImageContext(mergedSize);
@@ -209,8 +280,6 @@
     [first_number drawInRect:CGRectMake(270, 230, secondWidth, secondHeight)];
     [secord_number drawInRect:CGRectMake(340, 230, secondWidth, secondHeight)];
     [third_number drawInRect:CGRectMake(410, 230, secondWidth, secondHeight)];
-    [qrcode drawInRect:CGRectMake(0, 350, 200, 200)];
-    
     
     // assign context to new UIImage
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
