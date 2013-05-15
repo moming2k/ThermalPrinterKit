@@ -8,7 +8,7 @@
 #
 Pod::Spec.new do |s|
   s.name         = "ThermalPrinterKit"
-  s.version      = "1.1.2"
+  s.version      = "1.1.3"
   s.summary      = "A helper of to prepare data for connect to Thermal Printer TM88 series."
   s.description  = <<-DESC
                      A helper of to prepare data for connect to Thermal Printer TM88 series.
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.license  = { :type => 'BSD / Apache License, Version 2.0', :file => 'LICENSE' }
   s.author       = { "Chris Chan" => "chrischan@igpsd.com" }
-  s.source       = { :git => "https://github.com/moming2k/ThermalPrinterKit.git", :tag => "1.1.2" }
+  s.source       = { :git => "https://github.com/moming2k/ThermalPrinterKit.git", :tag => "1.1.3" }
   s.platform     = :ios, '4.3'
   s.source_files = 'IGThermalSupport.*','SupportLibrary/**/*.{h,m,mm,c,cc}'
 end

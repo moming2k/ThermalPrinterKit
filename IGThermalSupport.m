@@ -233,7 +233,7 @@
     int secord_num = (number - first_num*100)/10;
     int third_num = number - first_num*100 - secord_num*10;
     
-    UIImage *ticket_bg = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_bg"]];
+    UIImage *ticket_bg = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_white_bg"]];
     UIImage *ticket_type = [UIImage imageNamed:[NSString stringWithFormat:@"char-%@",colorType]];
     UIImage *first_number = [UIImage imageNamed:[NSString stringWithFormat:@"char-%i",first_num]];
     UIImage *secord_number = [UIImage imageNamed:[NSString stringWithFormat:@"char-%i",secord_num]];
