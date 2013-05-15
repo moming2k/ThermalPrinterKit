@@ -24,9 +24,11 @@ typedef enum {
 + (CGContextRef) newBitmapRGBA8ContextFromImage:(CGImageRef) image;
 + (NSData *)cutLine;
 + (NSData *)feedLines:(int)lines;
-+ (UIImage*)mergeImage:(UIImage*)first withShopLogo:(UIImage*)shopLogo withImageInfo:(UIImage*)imageInfo withQRCode:(NSString*)qrcode withColorType:(NSString*)colorType withNumber:(int)number;
-+ (UIImage*)drawText:(NSString*)text inImage:(UIImage*)image atPoint:(CGPoint)point;
++ (UIImage*)mergeImage:(UIImage*)first withShopLogo:(UIImage*)shopLogo withColorType:(NSString*)colorType withNumber:(int)number;
++ (UIImage*)mergeImageQrcode:(UIImage*)first withShopLogo:(UIImage*)shopLogo withImageInfo:(UIImage*)imageInfo withQRCode:(NSString*)qrcode withColorType:(NSString*)colorType withNumber:(int)number withShopName:(NSString*)shopName withShopInfo:(NSString*)shopInfo withTicketTime:(NSString*)ticketTime withTicketDetail:(NSString*)ticketDetail;
++ (UIImage*)drawText:(NSString*)text inImage:(UIImage*)image atPoint:(CGPoint)point withFont:(UIFont *)font;
 + (UIImage*)mergeImage2:(UIImage*)first withQRCode:(NSString*)qrcode withNumber:(int)number;
 + (UIImage *) receiptImage:(UIImage*)image withNumber:(int)number;
++ (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font;
 
 @end

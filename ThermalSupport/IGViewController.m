@@ -41,10 +41,14 @@
     UIImage *shopLogo = [UIImage imageNamed:@"shop-logo"];
     UIImage *imageInfo = [UIImage imageNamed:@"info"];
     
-    NSString *code = @"http://igpsd.com";
+    NSString *code = @"http://m.ecqapp.com/?6001";
     NSString *colorType = @"b";
+    NSString *shopName = @"金滿庭 Modern China";
+    NSString *shopInfo = @"Shop Unit : 312A | Tel : +852 3483 9370";
+    NSString *ticketTime = @"15/04/2013 12:00:00";
+    NSString *ticketDetail = @"掃描QR CODE或瀏覽以下網頁：\n\nhttp://m.ecqapp.com/?6001\n\n即可查詢最新座位叫號情況。\n如使用「手機排隊叫號提示功\n能」，請留意系統來電通知。";
 
-    receiptImage.image = [IGThermalSupport mergeImage:bigImage withShopLogo:shopLogo withImageInfo:imageInfo withQRCode:code withColorType:colorType withNumber:898];
+    receiptImage.image = [IGThermalSupport mergeImageQrcode:bigImage withShopLogo:shopLogo withImageInfo:imageInfo withQRCode:code withColorType:colorType withNumber:898 withShopName:shopName withShopInfo:shopInfo withTicketTime:ticketTime withTicketDetail:ticketDetail];
 }
 
 - (void)testPrintNumber2
