@@ -233,6 +233,7 @@
     int secord_num = (number - first_num*100)/10;
     int third_num = number - first_num*100 - secord_num*10;
     
+    UIImage *ticket_bg = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_bg"]];
     UIImage *ticket_type = [UIImage imageNamed:[NSString stringWithFormat:@"char-%@",colorType]];
     UIImage *first_number = [UIImage imageNamed:[NSString stringWithFormat:@"char-%i",first_num]];
     UIImage *secord_number = [UIImage imageNamed:[NSString stringWithFormat:@"char-%i",secord_num]];
@@ -262,6 +263,7 @@
     UIGraphicsBeginImageContext(mergedSize);
     
     //Draw images onto the context
+    [ticket_bg drawInRect:CGRectMake(0, 0, firstWidth, qrcode_y + 200)];
     [first drawInRect:CGRectMake(0, 0, firstWidth, firstHeight)];
     [shopLogo drawInRect:CGRectMake(0, firstHeight, shopLogoWidth, shopLogoHeight)];
     [ticket_type drawInRect:CGRectMake(220, 280, secondWidth, secondHeight)];
