@@ -37,7 +37,7 @@
 
 - (void)testPrintNumber
 {
-    UIImage *bigImage = [UIImage imageNamed:@"top"];
+//    UIImage *bigImage = [UIImage imageNamed:@"top"];
     UIImage *shopLogo = [UIImage imageNamed:@"shop-logo"];
     UIImage *imageInfo = [UIImage imageNamed:@"info"];
     
@@ -48,7 +48,11 @@
     NSString *ticketTime = @"15/04/2013 12:00:00";
     NSString *ticketDetail = @"掃描QR CODE或瀏覽以下網頁：\n\nhttp://m.ecqapp.com/?6001\n\n即可查詢最新座位叫號情況。\n如使用「手機排隊叫號提示功\n能」，請留意系統來電通知。";
 
-    receiptImage.image = [IGThermalSupport mergeImageQrcode:bigImage withShopLogo:shopLogo withImageInfo:imageInfo withQRCode:code withColorType:colorType withNumber:898 withShopName:shopName withShopInfo:shopInfo withTicketTime:ticketTime withTicketDetail:ticketDetail];
+//    receiptImage.image = [IGThermalSupport mergeImageQrcode:bigImage withShopLogo:shopLogo withImageInfo:imageInfo withQRCode:code withColorType:colorType withNumber:898 withShopName:shopName withShopInfo:shopInfo withTicketTime:ticketTime withTicketDetail:ticketDetail];
+    
+    UIImage *bigImage = [UIImage imageNamed:@"ticket_logo_blue"];
+    receiptImage.image = [IGThermalSupport mergeImageStore:bigImage withImageInfo:imageInfo withQRCode:code withNumber:898 withShopName:shopName withShopInfo:shopInfo withTicketTime:ticketTime withTicketDetail:ticketDetail];
+
 }
 
 - (void)testPrintNumber2

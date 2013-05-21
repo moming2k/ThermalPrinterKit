@@ -293,6 +293,76 @@
     return newImageWithText3;
 }
 
++ (UIImage*)mergeImageStore:(UIImage*)first withImageInfo:(UIImage*)imageInfo withQRCode:(NSString*)qrcode  withNumber:(int)number withShopName:(NSString*)shopName withShopInfo:(NSString*)shopInfo withTicketTime:(NSString*)ticketTime withTicketDetail:(NSString*)ticketDetail
+{
+    // get size of the first image
+    CGImageRef firstImageRef = first.CGImage;
+    CGFloat firstWidth = CGImageGetWidth(firstImageRef);
+    CGFloat firstHeight = CGImageGetHeight(firstImageRef);
+    
+    // get size of the number image
+    int first_num = number/100;
+    int secord_num = (number - first_num*100)/10;
+    int third_num = number - first_num*100 - secord_num*10;
+    
+    UIImage *ticket_bg = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_white_bg"]];
+    UIImage *first_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",first_num]];
+    UIImage *secord_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",secord_num]];
+    UIImage *third_number = [UIImage imageNamed:[NSString stringWithFormat:@"ticket_%i",third_num]];
+    
+    CGImageRef secondImageRef = first_number.CGImage;
+    CGFloat secondWidth = CGImageGetWidth(secondImageRef);
+    CGFloat secondHeight = CGImageGetHeight(secondImageRef);
+    
+    // get size of the info image
+    CGImageRef infoImageRef = imageInfo.CGImage;
+    CGFloat infoWidth = CGImageGetWidth(infoImageRef);
+    CGFloat infoHeight = CGImageGetHeight(infoImageRef);
+    CGFloat info_y = firstHeight + 100;
+    
+    // gen qr code
+    Barcode *barcode = [[Barcode alloc] init];
+    [barcode setupQRCode:qrcode];
+    UIImage *image_qrcode = barcode.qRBarcode;
+    CGFloat qrcode_y = info_y + infoHeight + 20;
+    
+    // build merged size
+    CGSize mergedSize = CGSizeMake(530, qrcode_y + 200);
+    //    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
+    
+    // capture image context ref
+    UIGraphicsBeginImageContext(mergedSize);
+    
+    //Draw images onto the context
+    [ticket_bg drawInRect:CGRectMake(0, 0, firstWidth, qrcode_y + 200)];
+    [first drawInRect:CGRectMake(0, 0, firstWidth, firstHeight)];
+    [first_number drawInRect:CGRectMake(270, 230, secondWidth, secondHeight)];
+    [secord_number drawInRect:CGRectMake(340, 230, secondWidth, secondHeight)];
+    [third_number drawInRect:CGRectMake(410, 230, secondWidth, secondHeight)];
+    [imageInfo drawInRect:CGRectMake(0, info_y, infoWidth, infoHeight)];
+    [image_qrcode drawInRect:CGRectMake(25, qrcode_y, 200, 200)];
+    
+    
+    // assign context to new UIImage
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIFont *font = [UIFont boldSystemFontOfSize:18];
+    CGFloat textwidth = [IGThermalSupport widthOfString:shopName withFont:font];
+    UIImage *newImageWithText = [IGThermalSupport drawText:shopName inImage:newImage atPoint:CGPointMake((530 - textwidth)/2, firstHeight + 20) withFont:(UIFont *)font];
+    textwidth = [IGThermalSupport widthOfString:shopInfo withFont:font];
+    UIImage *newImageWithText1 = [IGThermalSupport drawText:shopInfo inImage:newImageWithText atPoint:CGPointMake((530 - textwidth)/2, firstHeight + 40) withFont:(UIFont *)font];
+    textwidth = [IGThermalSupport widthOfString:ticketTime withFont:font];
+    UIImage *newImageWithText2 = [IGThermalSupport drawText:ticketTime inImage:newImageWithText1 atPoint:CGPointMake((530 - textwidth)/2, firstHeight + 60) withFont:(UIFont *)font];
+    textwidth = [IGThermalSupport widthOfString:ticketDetail withFont:font];
+    UIImage *newImageWithText3 = [IGThermalSupport drawText:ticketDetail inImage:newImageWithText2 atPoint:CGPointMake(230, qrcode_y + 10) withFont:(UIFont *)font];
+    
+    // end context
+    UIGraphicsEndImageContext();
+    
+    return newImageWithText3;
+}
+
+
 + (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font
 {
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
