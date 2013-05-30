@@ -256,7 +256,7 @@
     CGFloat qrcode_y = info_y + infoHeight + 20;
     
     // build merged size
-    CGSize mergedSize = CGSizeMake(530, qrcode_y + 200);
+    CGSize mergedSize = CGSizeMake(520, qrcode_y + 200);
     //    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
     
     // capture image context ref
@@ -327,7 +327,7 @@
     CGFloat qrcode_y = info_y + infoHeight + 20;
     
     // build merged size
-    CGSize mergedSize = CGSizeMake(530, qrcode_y + 200);
+    CGSize mergedSize = CGSizeMake(520, qrcode_y + 200);
     //    CGSize mergedSize = CGSizeMake(MAX(firstWidth, secondWidth), MAX(firstHeight, secondHeight));
     
     // capture image context ref
